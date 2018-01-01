@@ -3,28 +3,33 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-constructor () {
-  super();
-  this.state = {
-    cats: [
-      {name: 'Jimmy',
-      skill: 'shredding couches'},
-      {
-        name: 'Birtha',
-        skill: 'running around at 3AM'
-      }
-    ]
+  constructor() {
+    super();
+    this.state = {
+      cats: [
+        {
+          name: 'Jimmy',
+          skill: 'shredding couches'
+        },
+        {
+          name: 'Birtha',
+          skill: 'running around at 3AM'
+        }
+      ]
+    }
   }
-}
-  render() {
-//    change key to cat.id
-    const catsList = this.state.cats.map((cat, i) => 
+  getCats() {
     
+  }
+  render() {
+    //    change key to cat.id
+    const catsList = this.state.cats.map((cat, i) =>
+
       <li key={i.toString()}>
         Name: {cat.name} &nbsp
         Skill: {cat.skill}
-      </li> 
-      
+      </li>
+
     )
 
     return (
