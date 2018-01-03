@@ -1,52 +1,46 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
+//actions
+import getCats from './actions/get_cats'
 import logo from './logo.svg';
 import './App.css';
 
-const url = 'http://localhost:5000/api';
+//const url = 'http://localhost:5000/api';
 
 class App extends Component {
   constructor() {
     super();
-    this.state = {
-      cats: [
-        // {
-        //   name: 'Jimmy',
-        //   skill: 'shredding couches'
-        // },
-        // {
-        //   name: 'Birtha',
-        //   skill: 'running around at 3AM'
-        // }
-      ]
-    };
-    this.getCats = this.getCats.bind(this);
+    this.state = {cats: []};
+    // this.state = {
+    //   cats: [
+    //     {
+    //       name: 'No',
+    //       skill: 'not working yet'
+    //     }
+    //   ]
+    // };
   }
-  componentDidMount() {
-    this.getCats();
+  componentWillMount() {
+    this.props.getCats();
   }
-  getCats() {
-    fetch(`${url}/cats`)
-      .then(response => response.json())
-      .then(responseArray => {
-        console.log(`responseAray: `);
-        console.log(responseArray);
 
-        this.setState({
-          cats: responseArray
-        });
-
-      }).catch(error => console.log(`Error with Fetch get cats: ${error}`));
-  }
   render() {
-    //    change key to cat.id
-    const catsList = this.state.cats.map((cat, i) =>
+    //    TO DO: change key to cat.id
+    
+    const catsList = this.props.cats.map((cat, i) =>
 
       <li key={i.toString()}>
-        Name: {cat.name} &nbsp
-        Skill: {cat.skill}
+        Name: {cat.name}  Skill: {cat.skill}
       </li>
 
     )
+    console.log('render state: ');
+    console.log(this.state);
+    console.log('render props: ');
+    console.log(this.props);
+    
 
     return (
       <div className="App">
@@ -62,4 +56,25 @@ class App extends Component {
   }
 }
 
-export default App;
+App.propTypes = {
+  cats: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.number, name: PropTypes.string, skill: PropTypes.string }))
+
+}
+
+function mapStateToProps(state) {
+  console.log('mapStateToProps called, state: ');
+  console.log(state);
+  
+  return {
+    cats: state.cats
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    getCats: getCats
+  }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+
