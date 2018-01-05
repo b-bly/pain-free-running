@@ -78,3 +78,8 @@ function mapDispatchToProps(dispatch) {
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
 
+//injury list page
+  //select injury
+  //add injury
+  //search by injury name, pain location (muscle), keyword
+//injury page 
