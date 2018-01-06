@@ -1,18 +1,28 @@
 import React, { Component } from 'react';
+//Redux
 import {connect} from 'react-redux';
 import {bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
-//actions
-import getCats from './actions/get_cats'
+
+import {
+  BrowserRouter as Router,
+  Route, Switch
+} from 'react-router-dom'
+//components
+import  InjuryList  from './components/injury-list';
+import InjuryInfo from './components/injuryInfo';
+
+//images
 import logo from './logo.svg';
+//style
 import './App.css';
 
 //const url = 'http://localhost:5000/api';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {cats: []};
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    
     // this.state = {
     //   cats: [
     //     {
@@ -23,24 +33,10 @@ class App extends Component {
     // };
   }
   componentWillMount() {
-    this.props.getCats();
+    
   }
 
   render() {
-    //    TO DO: change key to cat.id
-    
-    const catsList = this.props.cats.map((cat, i) =>
-
-      <li key={i.toString()}>
-        Name: {cat.name}  Skill: {cat.skill}
-      </li>
-
-    )
-    console.log('render state: ');
-    console.log(this.state);
-    console.log('render props: ');
-    console.log(this.props);
-    
 
     return (
       <div className="App">
@@ -49,37 +45,21 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <div className="App-intro">
-          <ol>{catsList}</ol>
+          <InjuryList />
+          <InjuryInfo />
         </div>
       </div>
     );
   }
 }
 
-App.propTypes = {
-  cats: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.number, name: PropTypes.string, skill: PropTypes.string }))
-
-}
-
-function mapStateToProps(state) {
-  console.log('mapStateToProps called, state: ');
-  console.log(state);
-  
-  return {
-    cats: state.cats
-  }
-}
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({
-    getCats: getCats
-  }, dispatch);
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 //injury list page
   //select injury
   //add injury
   //search by injury name, pain location (muscle), keyword
 //injury page 
+  //injury name
+  //helpful treatments description (title?)
+  //upvote treatments button
+  //add to myTreatments

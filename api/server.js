@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
-const api = require('./routes/cats');
+const injuries = require('./routes/injuries');
 const PORT = 5000;
 const app = express();
 
@@ -13,8 +13,6 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//all of our api routes are in ./routes/api
-app.use('/api', api);
-
+app.use('/injuries', injuries);
 
 app.listen(PORT, () => console.log('listening on port ', PORT));

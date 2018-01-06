@@ -1,7 +1,7 @@
 const pg = require('pg');
 
 const pool = new pg.Pool({
-    database: 'cats',
+    database: 'injuries',
     port: 5432,
     ssl: false,
     max: 20,

@@ -1,8 +1,11 @@
 import { combineReducers } from 'redux';
-import catsReducer from './cats_reducer';
+import injuryList from './injuryListReducer';
+import injuryInfo from './injuryInfoReducer';
+
 
 const rootReducer = combineReducers({
-    cats: catsReducer,
+    injuryList,
+    injuryInfo
 });
 
 export default rootReducer;
