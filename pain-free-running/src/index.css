@@ -22,8 +22,8 @@ body {
   float: right;
 }
 .card {
-  width: 50%;
-  margin: auto;
+  
+  width: max-content;
   margin-bottom: 7px;
   margin-top: 7px;
   box-shadow: 0 .1rem .4rem rgba(0, 0, 0, .3);
@@ -55,6 +55,10 @@ body {
 .card-body p {
   font-size: 1.6rem;
   font-weight: 300;
+}
+.column {
+  display: flex;
+  flex-direction: column;
 }
 textarea.form-input {
   font-size: 1.6rem;
@@ -101,6 +105,10 @@ textarea.form-input {
 .new-avatar-container .avatar.avatar-xl img {
   width: 64px;
   height: 64px;
+}
+.treatment-title {
+  text-align: left;
+  
 }
 @media screen and (max-width: 700px) {
   .card {
