@@ -18,13 +18,6 @@ class InjuryInfo extends Component {
 
         console.log('injury list props: ');
         console.log(this.props);
-        const injuryInfo =
-            <ol><li>Injury: {this.props.injuryInfo.title}</li>
-                <li>Description: {this.props.injuryInfo.description}</li>
-                <li>Treatments:
-                    <li>Exercise</li>
-                </li>
-            </ol>;
         return (
             <div>
                 <div className="card-container">
@@ -33,45 +26,48 @@ class InjuryInfo extends Component {
                             <div className="card">
 
                                 <div className="card-header">
-
-                                    <h4 className="card-title">{this.props.injuryInfo.title}</h4>
-                                    
-                                </div>
-                                {/* <Note
+                                    <div className="card-title-line">
+                                        <Link to='/'><button className="btn btn-sm arrow-left" aria-label="back"><i className="icon icon-arrow-left"></i></button></Link>
+                                    </div>
+                                        <div className="card-title-line">
+                                            <h4 className="card-title ">&nbsp; {this.props.injuryInfo.title}</h4>
+                                        </div>
+                                    </div>
+                                    {/* <Note
           toggleEdit={this.toggleEdit}
           updatePerson={this.handleUpdatePerson}
           edit={this.state.editReason}
           handleReasonChange={this.handleReasonChange}
           content={this.state.reason} /> */}
-                                <small className="">
-                                {this.props.injuryInfo.description}
-          </small>
+                                    <small className="">
+                                        {this.props.injuryInfo.description}
+                                    </small>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
-                <Link to='/'>Injury List</Link>
-            </div>
-        );
+                );
     }
 }
 
 // InjuryList.propTypes = {
-//     injuryList: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.number, title: PropTypes.string, description: PropTypes.string }))
+                    //     injuryList: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.number, title: PropTypes.string, description: PropTypes.string }))
 
-// }
+                    // }
 
-function mapStateToProps(state) {
-    console.log('InjuryList mapStateToProps called, state: ');
-    console.log(state);
-    return {
-        injuryInfo: state.injuryInfo
-    };
-}
+                    function mapStateToProps(state) {
+                        console.log('InjuryList mapStateToProps called, state: ');
+                        console.log(state);
+                        return {
+                            injuryInfo: state.injuryInfo
+                        };
+                    }
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
-        getInjuryInfo: getInjuryInfo
+                    getInjuryInfo: getInjuryInfo
     }, dispatch);
 }
 

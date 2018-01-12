@@ -54,8 +54,16 @@ export default class App extends Component {
       <Router>
         <div className="App">
           <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
+          
+            <div>
+              <img src={logo} className="App-logo" alt="logo" />
+              </div>
+              <div>
+              <h1 className="App-title">Pain Free Running</h1>
+            </div>
+            <div>
+              <button class="btn btn-action" aria-label="menu"><i class="icon icon-menu"></i></button>
+            </div>
           </header>
           <div className="App-intro">
             <Switch>
@@ -64,8 +72,8 @@ export default class App extends Component {
               <Route path="/injury-info" component={InjuryInfo} />
             </Switch>
           </div>
-        </div>
-      </Router>
+        </div >
+      </Router >
 
     );
   }

@@ -11,6 +11,7 @@ import App from './App';
 
 //style
 import 'spectre.css/dist/spectre.min.css';
+import 'spectre.css/dist/spectre-icons.css';
 import './index.css';
 //import registerServiceWorker from './registerServiceWorker';
 

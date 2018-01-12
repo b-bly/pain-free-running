@@ -24,18 +24,24 @@ body {
 .card {
   width: 50%;
   margin: auto;
-  margin-bottom: 15px;
+  margin-bottom: 7px;
+  margin-top: 7px;
   box-shadow: 0 .1rem .4rem rgba(0, 0, 0, .3);
-  padding: 0.5rem;
+  padding: 0.2rem;
 }
 .card-header {
   display: flex;
   align-items: center;
+  
 }
 .card-header h4,
 .modal-header h4 {
   font-weight: 400;
 }
+.card-title-line {
+  height: 40px;
+}
+
 .card-header .tooltip:after {
   width: 190px;
 }
@@ -104,7 +110,7 @@ textarea.form-input {
     font-size: 2rem;
   }
   .card .card-title {
-    font-size: 1.6rem;
+    font-size: 1rem;
   }
   .card-body p {
     font-size: 1.4rem;
