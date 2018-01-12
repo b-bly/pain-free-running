@@ -11,7 +11,7 @@ import {
 
 //components
 import InjuryList from './components/injury-list';
-import InjuryInfo from './components/injuryInfo';
+import InjuryInfo from './components/injury-info';
 
 //images
 import logo from './logo.svg';

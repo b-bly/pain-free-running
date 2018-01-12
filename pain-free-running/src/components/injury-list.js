@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import getInjuryList from '../actions/getInjuryList';
 import { Link } from 'react-router-dom';
 
-
 class InjuryList extends Component {
     constructor(props) {
         super(props);
@@ -25,8 +24,7 @@ class InjuryList extends Component {
                 <p>Injury List</p>
                 <ol>
                     {injuryList}
-
-                </ol>
+                </ol>              
                 <Link to='/injury-info'>Injury Info</Link>
             </div>
         );

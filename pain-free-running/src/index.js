@@ -6,9 +6,12 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';  
 import { createLogger } from 'redux-logger'
 import reducers from './reducers';
-
-import './index.css';
+//files
 import App from './App';
+
+//style
+import 'spectre.css/dist/spectre.min.css';
+import './index.css';
 //import registerServiceWorker from './registerServiceWorker';
 
 // const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
