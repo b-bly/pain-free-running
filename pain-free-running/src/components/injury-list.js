@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import getInjuryList from '../actions/getInjuryList';
-
+import { Link } from 'react-router-dom';
 
 
 class InjuryList extends Component {
@@ -22,10 +22,12 @@ class InjuryList extends Component {
         );
         return (
             <div>
-            <p>Injury List</p>
-            <ol>
-                {injuryList}
-            </ol>
+                <p>Injury List</p>
+                <ol>
+                    {injuryList}
+
+                </ol>
+                <Link to='/injury-info'>Injury Info</Link>
             </div>
         );
     }

@@ -5,7 +5,7 @@ import injuryInfo from './injuryInfoReducer';
 
 const rootReducer = combineReducers({
     injuryList,
-    injuryInfo
+   injuryInfo
 });
 
 export default rootReducer;

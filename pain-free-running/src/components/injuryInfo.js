@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import getInjuryInfo from '../actions/getInjuryInfo';
+import {Link} from 'react-router-dom';
 
 class InjuryList extends Component {
     constructor(props) {
@@ -10,7 +11,7 @@ class InjuryList extends Component {
         this.state = { injuryList: [] };
     }
     componentWillMount() {
-       // this.props.getInjuryInfo('High Hamstring Tendonopathy');
+       this.props.getInjuryInfo('High Hamstring Tendonopathy');
     }
     render() {
         console.log('injury list props: ');
@@ -21,9 +22,8 @@ class InjuryList extends Component {
         return (
             <div>
                 <p>Injury Info</p>
-
-                {injuryInfo}
-
+                { injuryInfo }
+                <Link to='/'>Injury List</Link>
             </div>
         );
     }
@@ -37,7 +37,6 @@ class InjuryList extends Component {
 function mapStateToProps(state) {
     console.log('InjuryList mapStateToProps called, state: ');
     console.log(state);
-
     return {
         injuryInfo: state.injuryInfo
     };

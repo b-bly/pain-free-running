@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 //Redux
-import {connect} from 'react-redux';
-import {bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 
 import {
   BrowserRouter as Router,
   Route, Switch
-} from 'react-router-dom'
+} from 'react-router-dom';
+
 //components
-import  InjuryList  from './components/injury-list';
+import InjuryList from './components/injury-list';
 import InjuryInfo from './components/injuryInfo';
 
 //images
@@ -22,7 +23,7 @@ import './App.css';
 export default class App extends Component {
   constructor(props) {
     super(props);
-    
+
     // this.state = {
     //   cats: [
     //     {
@@ -33,22 +34,39 @@ export default class App extends Component {
     // };
   }
   componentWillMount() {
-    
+
   }
 
   render() {
 
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <div className="App-intro">
-          <InjuryList />
-          <InjuryInfo />
+      // <div className="App">
+      //   <header className="App-header">
+      //     <img src={logo} className="App-logo" alt="logo" />
+      //     <h1 className="App-title">Welcome to React</h1>
+      //   </header>
+      //   <div className="App-intro">
+      //     <InjuryList />
+      //     <InjuryInfo />
+      //   </div>
+      // </div>
+
+      <Router>
+        <div className="App">
+          <header className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <h1 className="App-title">Welcome to React</h1>
+          </header>
+          <div className="App-intro">
+            <Switch>
+              {/* don't forget EXACT!!! */}
+              <Route exact path="/" component={InjuryList} />
+              <Route path="/injury-info" component={InjuryInfo} />
+            </Switch>
+          </div>
         </div>
-      </div>
+      </Router>
+
     );
   }
 }

@@ -5,14 +5,11 @@ export default function (state = [], action) {
             console.log({...action.payload});
             return action.payload;           
             
-        case 'GET_INJURY_INFO':
-            console.log('injuries reducer, action: ');
-            console.log(action);
-            return {
-                ...state,
-                ...action.payload
-            };
         default:
             return state;           
     }
 }
+//   return {
+//                 ...state,
+//                 ...action.payload
+//             };
