@@ -27,6 +27,20 @@
   font-size: large;
 }
 
+.button-menu {
+  background-color: black;
+  color: black;
+  border-color: black;
+}
+
+.icon-menu {
+  color: white;
+}
+.icon-menu:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

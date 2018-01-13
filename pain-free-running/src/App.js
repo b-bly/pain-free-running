@@ -62,7 +62,7 @@ export default class App extends Component {
               <h1 className="App-title">Pain Free Running</h1>
             </div>
             <div>
-              <button class="btn btn-action" aria-label="menu"><i class="icon icon-menu"></i></button>
+              <button className="button-menu" aria-label="menu"><i class="icon icon-menu"></i></button>
             </div>
           </header>
           <div className="App-intro">

@@ -53,20 +53,20 @@ class InjuryInfo extends Component {
                 {/* TREATMENTS LIST */}
 
                 <div className="columns">
-                    <div className="column col-6 col-mx-auto">
+                <div className="column col-4"></div>
+                    <div className="column col-6 col-mr-auto">
                         <div className="card">
 
                             <div className="card-header">
+                                
                                 <div className="card-title-line">
-                                    <Link to='/'><button className="btn btn-sm arrow-left" aria-label="back"><i className="icon icon-arrow-left"></i></button></Link>
+                                    <h4 className="card-title ">&nbsp; {this.props.injuryInfo.title} &nbsp;</h4>
                                 </div>
                                 <div className="card-title-line">
-                                    <h4 className="card-title ">&nbsp; {this.props.injuryInfo.title}</h4>
+                                    <button className="btn btn-sm" aria-label="up vote"><i className="icon icon-upward"></i></button>
                                 </div>
                             </div>
-                            <small className="">
-                                {this.props.injuryInfo.description}
-                            </small>
+                            
                         </div>
                     </div>
 
