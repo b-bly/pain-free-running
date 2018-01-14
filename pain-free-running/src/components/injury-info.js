@@ -13,9 +13,13 @@ class InjuryInfo extends Component {
             showDescription: false
         }
         this.toggleDescription = this.toggleDescription.bind(this);
+        this.toggleComments = this.toggleComments.bind(this);
     }
     componentWillMount() {
         this.props.getInjuryInfo('High Hamstring Tendonopathy');
+    }
+    toggleComments () {
+        this.setState({showComments: !this.state.showComments});
     }
    toggleDescription () {
        this.setState({showDescription: !this.state.showDescription});
@@ -50,7 +54,7 @@ class InjuryInfo extends Component {
                         <div className="">
                             <div className="card-bdy">
                                 <div className="card-title-line">
-                                    <p className="treatment-name">{comment} &nbsp;
+                                    <p className="upvotes">{comment} &nbsp;
 
         {/* <span className="upvotes">Upvotes: {comment.upvotes} &nbsp;</span>*/}</p>
                                 </div>
@@ -98,9 +102,13 @@ class InjuryInfo extends Component {
 
                     <div className="columns">
                         <div className="column col-5"></div>
-                        <div className="column col-6 col-mr-auto treatment-title"><h4>Comments: </h4></div>
+                        <div className="column col-6 col-mr-auto treatment-title toggle"
+                        onClick={this.toggleComments}
+                        ><h4>Comments: </h4></div>
                     </div>
-                    {comments}
+                    {this.state.showComments ?
+                    <div className="upvotes">{comments}</div>
+                    : null}
                 </div>
 
 
