@@ -21,28 +21,33 @@ body {
 .btn-clear {
   float: right;
 }
-.card {
-  
+.card { 
   width: max-content;
   margin-bottom: 7px;
   margin-top: 7px;
   box-shadow: 0 .1rem .4rem rgba(0, 0, 0, .3);
-  
 }
-.card-header {
+.card-header, .card-header-treatment, .card-bdy {
   display: flex;
   align-items: center;
-  
+  padding: 5px;
+ 
 }
+
 .card-header h4,
 .modal-header h4 {
   font-weight: 400;
 }
 .card-title-line {
-  height: 27px;
+  height: 35px;
+}
+.card-line {
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: left;
 }
 
-.card-header .tooltip:after {
+ .tooltip:after {
   width: 190px;
 }
 .avatar {
@@ -51,10 +56,11 @@ body {
 .btn-right {
   display: flex;
   flex-direction: row-reverse;
+  
 }
-.card-body p {
-  font-size: 1.6rem;
-  font-weight: 300;
+.card-bdy  {
+  font-size: 1rem;
+  font-weight: 200;
 }
 .column {
   display: flex;
@@ -109,6 +115,17 @@ textarea.form-input {
 .treatment-title {
   text-align: left;
   
+}
+.treatment-name {
+  font-weight: 400;
+}
+.upvotes {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+.toggle {
+  opacity: 0.8;
+  cursor: pointer;
 }
 @media screen and (max-width: 700px) {
   .card {

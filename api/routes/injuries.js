@@ -23,25 +23,31 @@ router.get('/', function (req, res) {
 });
 
 router.get('/injuryInfo', function (req, res) {
-    console.log('injuriesInfo get, req.params: ');
-    console.log(req.query);
-    
     const title = req.query.title;
     pool.connect(function (err, db, done) {
         if (err) {
             console.log(err);
-            res.status(500).send({'error': err});
-            
+            res.status(500).send({'error': err});           
         } else {
             const text = 'SELECT * FROM injuries WHERE title=$1';
             const values = [title];
             db.query(text, values, (err, table) => {
                 done();
                 if (err) {
-                    return res.status(400).send({ error: err })
-                
+                    return res.status(400).send({ error: err })              
                 } else {
-                    return res.status(200).send(table.rows)
+                    // console.log('injury info response');
+                    // console.log(table.rows[0].treatments);
+                    return res.status(200).send(table.rows[0])
+                    // [ anonymous {
+                    //     id: 1,
+                    //     title: 'High Hamstring Tendonopathy',
+                    //     description: 'Pain in the butt.',
+                    //     treatments: 
+                    //      { name: 'squats',
+                    //        comments: [Object],
+                    //        description: 'Do two sets of 20',
+                    //        upvotes: '0' } } ]
                 }
             })
         }

@@ -14,7 +14,7 @@ export default function getInjuryInfo(title) {
             console.log('injuryInfo action res.data');
             console.log(res.data);
             
-            dispatch(getInjuryInfoAsync(res.data[0]));
+            dispatch(getInjuryInfoAsync(res.data));
         }).catch(function (error) {
             console.log('error getInjuryInfo : ');
             console.log(error);
