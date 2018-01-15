@@ -48,7 +48,9 @@ router.get('/injuryInfo', function (req, res) {
                     //        comments: [Object],
                     //        description: 'Do two sets of 20',
                     //        upvotes: '0' } } ]
+                    
                 }
+                
             })
         }
     })

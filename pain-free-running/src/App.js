@@ -12,6 +12,7 @@ import {
 //components
 import InjuryList from './components/injury-list';
 import InjuryInfo from './components/injury-info';
+import Register from './components/register';
 
 //images
 import logo from './logo.svg';
@@ -24,21 +25,9 @@ export default class App extends Component {
   constructor(props) {
     super(props);
 
-    // this.state = {
-    //   cats: [
-    //     {
-    //       name: 'No',
-    //       skill: 'not working yet'
-    //     }
-    //   ]
-    // };
-  }
-  componentWillMount() {
-
   }
 
   render() {
-
     return (
       // <div className="App">
       //   <header className="App-header">
@@ -66,6 +55,7 @@ export default class App extends Component {
             </div>
           </header>
           <div className="App-intro">
+          <Register />
             <Switch>
               {/* don't forget EXACT!!! */}
               <Route exact path="/" component={InjuryList} />
@@ -78,6 +68,7 @@ export default class App extends Component {
     );
   }
 }
+
 
 
 //injury list page
