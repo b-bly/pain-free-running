@@ -76,7 +76,10 @@ textarea.form-input {
 .form {
   display: flex;
   flex-direction: column;
- align-items: center;
+  align-items: center;
+}
+.register {
+  margin: 10px;
 }
 .color-picker-container {
   display: flex;
@@ -103,6 +106,7 @@ textarea.form-input {
   width: 64px;
   height: 64px;
 }
+
 .treatment-title {
   text-align: left;
   

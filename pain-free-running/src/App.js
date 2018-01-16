@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 import {
   BrowserRouter as Router,
-  Route, Switch
+  Route, Switch, Link
 } from 'react-router-dom';
 
 //components
@@ -51,15 +51,18 @@ export default class App extends Component {
               <h1 className="App-title">Pain Free Running</h1>
             </div>
             <div>
+              <Link to="/register">Register</Link>
               <button className="button-menu" aria-label="menu"><i className="icon icon-menu"></i></button>
             </div>
           </header>
           <div className="App-intro">
-          <Register />
+          
             <Switch>
               {/* don't forget EXACT!!! */}
+              
               <Route exact path="/" component={InjuryList} />
               <Route path="/injury-info" component={InjuryInfo} />
+              <Route path="/register" component={Register} />
             </Switch>
           </div>
         </div >
