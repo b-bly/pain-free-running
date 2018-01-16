@@ -19,11 +19,32 @@ class Register extends Component {
     }
     render() {
         return (
-        <div>
-            <p>Register</p>
-            <button className="btn"
-                onClick={this.postNewUser}>Submit</button>
-        </div>
+            <div>
+                <p>Register</p>
+                <form onSubmit={this.handleSubmit}>
+                    <div className="container">
+                        <div className="colums">
+
+                            <div className="col-6 col-mx-auto">
+                                <div className="form">
+                                    <div className="register input-group">
+                                        <label className="form-label ">
+                                            Username: <input className="form-input" type="text" />
+                                        </label>
+                                    </div >
+                                    <div className="register input-group">
+                                        <label className="form-label">
+
+                                            Password: <input className="form-input" type="password" name="password" />
+                                        </label>
+                                    </div>
+                                    <input className="btn register" type="submit" value="Submit" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div >
         );
     }
 }

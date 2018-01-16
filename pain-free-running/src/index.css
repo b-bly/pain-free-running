@@ -65,27 +65,18 @@ body {
 .column {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 textarea.form-input {
   font-size: 1.6rem;
   font-weight: 300;
 }
-.reward {
-  margin-left: 1.5rem;
-  font-weight: 300;
-}
-.reward span {
-  font-weight: 400;
-}
-.modal-container .modal-body {
-  overflow: visible;
-}
-.modal-container .modal-footer {
-    margin-top: 25px;
-}
-.form-group .dds {
+
+
+.form {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+ align-items: center;
 }
 .color-picker-container {
   display: flex;
