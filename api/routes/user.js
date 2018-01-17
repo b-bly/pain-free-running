@@ -1,15 +1,15 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 // Handles Ajax request for user information if user is authenticated
-router.get('/', function(req, res) {
+router.get('/', (req, res) => {
   console.log('get /user route');
   // check if logged in
-  if(req.isAuthenticated()) {
+  if (req.isAuthenticated()) {
     // send back user object from database
     console.log('logged in', req.user);
-    var userInfo = {
-      username : req.user.username
+    const userInfo = {
+      username: req.user.username
     };
     res.send(userInfo);
   } else {
@@ -21,7 +21,7 @@ router.get('/', function(req, res) {
 });
 
 // clear all server session information about this user
-router.get('/logout', function(req, res) {
+router.get('/logout', (req, res) => {
   // Use passport's built-in method to log out the user
   console.log('Logged out');
   req.logOut();

@@ -85,26 +85,9 @@ textarea.form-input {
   display: flex;
   align-items: center;
 }
-.new-avatar-container {
-  display: flex;
-  justify-content: center;
-  align-items: center
-}
-.new-avatar-container .avatar.avatar-xl {
-  margin: 0;
-  text-align: center;
-  position: relative;
-  top: -24px;
-  width: 100px;
-}
-.new-avatar-container .avatar.avatar-xl label {
-  font-size: 14px;
-  display: inline-block;
-  font-weight: 400;
-}
-.new-avatar-container .avatar.avatar-xl img {
-  width: 64px;
-  height: 64px;
+.navbar-item {
+  color: white;
+  margin: 10px;
 }
 
 .treatment-title {

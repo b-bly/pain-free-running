@@ -2,14 +2,14 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool');
 
-router.get('/', function (req, res) {
-    pool.connect(function (err, db, done) {
+router.get('/', (req, res) => {
+    pool.connect((err, db, done) => {
         if (err) {
             console.log(err);
             res.status(500).send({'error': err});
             
         } else {
-            db.query('SELECT title FROM injuries', function (err, table) {
+            db.query('SELECT title FROM injuries', (err, table) => {
                 done();
                 if (err) {
                     return res.status(400).send({ error: err })
@@ -22,9 +22,9 @@ router.get('/', function (req, res) {
     });
 });
 
-router.get('/injuryInfo', function (req, res) {
+router.get('/injuryInfo',  (req, res) => {
     const title = req.query.title;
-    pool.connect(function (err, db, done) {
+    pool.connect( (err, db, done) => {
         if (err) {
             console.log(err);
             res.status(500).send({'error': err});           

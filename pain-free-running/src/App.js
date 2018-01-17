@@ -13,6 +13,7 @@ import {
 import InjuryList from './components/injury-list';
 import InjuryInfo from './components/injury-info';
 import Register from './components/register';
+import Login from './components/login';
 
 //images
 import logo from './logo.svg';
@@ -51,8 +52,11 @@ export default class App extends Component {
               <h1 className="App-title">Pain Free Running</h1>
             </div>
             <div>
-              <Link to="/register">Register</Link>
-              <button className="button-menu" aria-label="menu"><i className="icon icon-menu"></i></button>
+              <Link className="navbar-item" to="/login">Login</Link>
+              &nbsp;
+              <Link className="navbar-item" to="/register">Register</Link>
+              &nbsp;
+              <button className="button-menu navbar-item" aria-label="menu"><i className="icon icon-menu"></i></button>
             </div>
           </header>
           <div className="App-intro">
@@ -63,6 +67,7 @@ export default class App extends Component {
               <Route exact path="/" component={InjuryList} />
               <Route path="/injury-info" component={InjuryInfo} />
               <Route path="/register" component={Register} />
+              <Route path="/login" component={Login} />
             </Switch>
           </div>
         </div >

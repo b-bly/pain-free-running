@@ -1,33 +1,26 @@
-var express = require('express');
-var router = express.Router();
-var path = require('path');
-var pool = require('../modules/pool.js');
-var encryptLib = require('../modules/encryption');
-
-// Handles request for HTML file
-router.get('/', function(req, res, next) {
-  console.log('get /register route');
-  res.sendFile(path.resolve(__dirname, '../public/views/templates/register.html'));
-});
+const express = require('express');
+const router = express.Router();
+const path = require('path');
+const pool = require('../modules/pool.js');
+const encryptLib = require('../modules/encryption');
 
 // Handles POST request with new user data
-// Handles POST request with new user data
-router.post('/', function(req, res, next) {
+router.post('/', (req, res, next) => {
 
-  var saveUser = {
+  const saveUser = {
     username: req.body.username,
     password: encryptLib.encryptPassword(req.body.password)
   };
   console.log('new user:', saveUser);
 
-  pool.connect(function(err, client, done) {
+  pool.connect((err, client, done) => {
     if(err) {
       console.log("Error connecting: ", err);
       res.sendStatus(500);
     }
     client.query("INSERT INTO users (username, password) VALUES ($1, $2) RETURNING id",
       [saveUser.username, saveUser.password],
-        function (err, result) {
+        (err, result) => {
           client.end();
 
           if(err) {
