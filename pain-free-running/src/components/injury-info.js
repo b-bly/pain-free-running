@@ -18,12 +18,12 @@ class InjuryInfo extends Component {
     componentWillMount() {
         this.props.getInjuryInfo('High Hamstring Tendonopathy');
     }
-    toggleComments () {
-        this.setState({showComments: !this.state.showComments});
+    toggleComments() {
+        this.setState({ showComments: !this.state.showComments });
     }
-   toggleDescription () {
-       this.setState({showDescription: !this.state.showDescription});
-   }
+    toggleDescription() {
+        this.setState({ showDescription: !this.state.showDescription });
+    }
     render() {
         console.log('injury info props: ');
         console.log(this.props);
@@ -47,16 +47,17 @@ class InjuryInfo extends Component {
         treatments = treatments.map((treatmentCopy, i) => {
             const treatment = Object.assign({}, treatmentCopy);
 
-            const comments = treatment.comments.map((comment, j) =>
+            const comments = treatment.comments.map((commentObj, j) =>
                 <div className="columns" key={j.toString()}>
                     <div className="column col-5"></div>
                     <div className="column col-6 col-mr-auto">
                         <div className="">
                             <div className="card-bdy">
                                 <div className="card-title-line">
-                                    <p className="upvotes">{comment} &nbsp;
+                                    <p className="upvotes">{commentObj.comment}
+                                        &nbsp;
 
-        {/* <span className="upvotes">Upvotes: {comment.upvotes} &nbsp;</span>*/}</p>
+        <span className="upvotes">Upvotes: {commentObj.upvotes} &nbsp;</span></p>
                                 </div>
                                 <div className="card-title-line">
                                     <button className="btn btn-sm" aria-label="up vote"><i className="icon icon-upward"></i></button>
@@ -84,14 +85,14 @@ class InjuryInfo extends Component {
                                     </div>
                                 </div>
                                 <div className="card-line toggle" >
-                                <p className="upvotes"
-                                
-                                onClick={this.toggleDescription}>
-                                Description
+                                    <p className="upvotes"
+
+                                        onClick={this.toggleDescription}>
+                                        Description
                                     {this.state.showDescription ?
-                                        <span>: { treatment.description }</span>
-                                    : null}
-                                </p>
+                                            <span>: {treatment.description}</span>
+                                            : null}
+                                    </p>
                                 </div>
 
                             </div>
@@ -103,12 +104,12 @@ class InjuryInfo extends Component {
                     <div className="columns">
                         <div className="column col-5"></div>
                         <div className="column col-6 col-mr-auto treatment-title toggle"
-                        onClick={this.toggleComments}
+                            onClick={this.toggleComments}
                         ><h4>Comments: </h4></div>
                     </div>
                     {this.state.showComments ?
-                    <div className="upvotes">{comments}</div>
-                    : null}
+                        <div className="upvotes">{comments}</div>
+                        : null}
                 </div>
 
 
